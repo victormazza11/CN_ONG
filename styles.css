@@ -1,0 +1,208 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    display: flex;
+    flex-direction: column; /* Allows centering of logo and navigation vertically */
+    align-items: center; /* Centers the content horizontally */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Ensures the header spans the full width of the page */
+    box-sizing: border-box;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+header .logo img {
+    max-width: 80px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+nav {
+    width: 100%; /* Takes up the full width of the header */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the navigation items horizontally */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #333;
+    border-bottom: 2px solid white;
+}
+
+section {
+    padding: 60px 20px;
+    min-height: 100vh;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    display: none; /* Hide by default */
+}
+
+#home {
+    display: block; /* Show home by default */
+}
+
+.carousel-container {
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+}
+
+.slide {
+    display: none;
+    position: relative;
+    width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+.text {
+    color: #f2f2f2;
+    font-size: 24px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.dots {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    position: relative;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+footer .social-icons a:hover {
+    color: #4CAF50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack logo and nav vertically */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .carousel img {
+        max-height: 300px; /* Adjust carousel image height on smaller screens */
+    }
+}
